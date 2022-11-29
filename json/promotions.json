@@ -1,0 +1,58 @@
+{
+    "promotions": [
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo-cereal.jpeg"
+        },
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo-harina.jpeg"
+        },
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo-keratin.jpeg"
+        },
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo-kerns.jpeg"
+        },
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo-nescafe.jpeg"
+        },
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo-nutella.jpeg"
+        },
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo.jpeg"
+        },
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo-sardimar.jpeg"
+        },
+        {   
+            "id": "americanfresh",
+            "name": "America Fresh",
+            "description": "Detergente America Fresh",
+            "img":"img/promo/promo-cerveza.jpeg"
+        }
+    ]
+}
