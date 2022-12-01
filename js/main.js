@@ -1,8 +1,9 @@
-$(document).ready(init);
+init();
 
 function init(){
     initNav();
     initPromotions();
+    initCatalog();
 }
 
 function initNav(){
@@ -29,6 +30,21 @@ function initNav(){
         "</div>";
 }
 
+async function initCatalog(){
+    var obj = await getCatalog();
+
+    var divCatalog = document.getElementById("list-catalog");
+
+    for (const iterator of obj.catalog) {
+            divCatalog.innerHTML = divCatalog.innerHTML +
+                "<div class='item-catalog'>" +
+                    "<div class='content-img-catalog'>" +
+                        "<img alt='" + iterator.name + "' class='img-catalog' src='"+ iterator.img +"'></img>" +
+                    "</div>" +
+                "</div>";
+    }
+
+}
 
 async function initPromotions(){
     var obj = await getPromotions();
