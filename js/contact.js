@@ -2,7 +2,6 @@ $(document).ready(init);
 
 function init(){
     initNav();
-    initPromotions();
 }
 
 function initNav(){
@@ -28,39 +27,3 @@ function initNav(){
             "</div>" + 
         "</div>";
 }
-
-
-async function initPromotions(){
-    var obj = await getPromotions();
-
-    var divCatalog = document.getElementById("promotions");
-
-    for (const iterator of obj.promotions) {
-            divCatalog.innerHTML = divCatalog.innerHTML +
-                "<div class='item-catalog'>" +
-                    "<div class='content-img-catalog'>" +
-                        "<img alt='" + iterator.name + "' class='img-catalog' src='"+ iterator.img +"'></img>" +
-                    "</div>" +
-                "</div>";
-    }
-
-}
-
-async function getCatalog(){
-    var route = "./json/catalog.json";
-
-    return await callJson(route);
-}
-
-async function getPromotions(){
-    var route = "./json/promotions.json";
-
-    return await callJson(route);
-}
-
-async function callJson(route){
-    if (route) {
-        return await fetch(route)
-            .then((response) => {return response.json()});
-    }
-};

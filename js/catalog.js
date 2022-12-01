@@ -1,8 +1,8 @@
 $(document).ready(init);
 
-function init(){
+async function init(){
     initNav();
-    initPromotions();
+    initCatalog();
 }
 
 function initNav(){
@@ -29,13 +29,12 @@ function initNav(){
         "</div>";
 }
 
+async function initCatalog(){
+    var obj = await getCatalog();
 
-async function initPromotions(){
-    var obj = await getPromotions();
+    var divCatalog = document.getElementById("list-catalog");
 
-    var divCatalog = document.getElementById("promotions");
-
-    for (const iterator of obj.promotions) {
+    for (const iterator of obj.catalog) {
             divCatalog.innerHTML = divCatalog.innerHTML +
                 "<div class='item-catalog'>" +
                     "<div class='content-img-catalog'>" +
@@ -47,13 +46,7 @@ async function initPromotions(){
 }
 
 async function getCatalog(){
-    var route = "./json/catalog.json";
-
-    return await callJson(route);
-}
-
-async function getPromotions(){
-    var route = "./json/promotions.json";
+    var route = "../json/catalog.json";
 
     return await callJson(route);
 }
@@ -64,3 +57,4 @@ async function callJson(route){
             .then((response) => {return response.json()});
     }
 };
+

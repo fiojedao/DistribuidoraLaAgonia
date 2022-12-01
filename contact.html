@@ -8,8 +8,12 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="css/styled.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>Contáctenos</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossorigin="anonymous">
+        <title>Contáctenos</title>
 </head>
 <body>
     <!-- main div -->
@@ -21,13 +25,40 @@
                 <!-- Nav tabs -->
                 <nav id="nav"></nav>
             </div>
-
         </div>
-
         <!-- main content -->
         <div class="main_content">
             <main>
-                <section>
+                <!-- about -->
+                <section id="about">
+                    <div>
+                        <div>
+                            <div class="ms-auto me-auto d-block container-sm pt-4 pb-4 main-header-contact">
+                                <span class="txt-primary fs-1"><em>Hola. Somos Distribuidora la Agonía, y repartimos pura felicidad :)</em></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-center">
+                                <span class="fs-5 txt-primary">Creemos que dar un servicio superior es nuestro super poder.</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <img style="width: 400px;" src="img/img-logo-2.jpeg" alt="">
+                        </div>
+                        <div class="pb-3">
+                            <p class="text-center txt-primary fs-6 ms-auto me-auto mt-1 pe-2 ps-2">
+                                Con más de 42 años en el mercado, somos el Supermercado favorita de Costa Rica. 
+                                Te brindamos un servicio espectacular, entrega rápida en miles de productos y variedades a buenos precios.
+                            </p>
+                            <p class="text-center fs-6 ms-auto me-auto mt-5 txt-primary mb-0">
+                                Nuestro Eslogan es, Si no lo tenemos, nosotros te lo conseguimos.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- information -->
+                <section id="information">
                     <div class="container container_section_info">
                         <div class="row">
                             <div class="col-md-3 col-sm-6">
@@ -57,7 +88,27 @@
                         </div>
                     </div>
                 </section>
-                <section>
+                <!-- history -->
+                <section id="history">
+                    <div class="container">
+                        <div class="container_history ms-auto me-auto">
+                            <div class="item-history">
+                                <img id="img-history" src="img/history.jpeg" alt="">
+                            </div>
+                            <div class="item-history">
+                                <p>
+                                    <strong class="fs-1">Como Empezo todo</strong>
+                                    <br>
+                                    <em>
+                                        ''Carlos Rodríguez, junto a su esposa Ana Gutiérrez, fundaron la distribuidora, iniciaron con una pequeña pulpería familiar en los 80’, ahora él ya no sé, ya no se encuentra entre nosotros, pero su hijo Mario Rodríguez, junto a su madre, se encarga del negocio familiar, ellos trabajan bajo los principio y deberes con el cual se dio inicio a esto, Carlos Rodríguez siempre decía que la familia primero, trata a los demás como te gustaría que traten con respeto y amabilidad''
+                                    </em>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- contact me -->
+                <section id="contcatme">
                     <div class="content_form-contact">
                         <div>
                             <span class="label-form-contact">
@@ -89,7 +140,8 @@
                         </div>
                     </div>
                 </section>
-                <section>
+                <!-- more information -->
+                <section id="moreid">
                     <div class="container_contact">
                         <div class="container_span-title">
                             <span class="title-contact">
@@ -104,23 +156,26 @@
                             </div>
                             <div>
                                 <span>
-                                    Villa Hermosa, LA Agonía, Av Concordia, Alajuela
+                                    200 S 200 E Iglesia La Agonía 1513-4050 Alajuela
                                 </span>
                             </div>
                             <div>
                                 <span>
-                                    Telefono: <a href="tel:+50660506050">(506) 6050-6050</a>
+                                    Horarios: De L. a V.  de 07:30 - 18:00
                                 </span>
                             </div>
                             <div>
                                 <span>
-                                    Correo: <a href="mailto:distribuidora@laagonia.com">distribuidora@laagonia.com</a>
+                                    Telefono: <a href="tel:+50660506050" class="txt-primary">(506) 2441 1983</a>
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    Correo: <a href="mailto:distribuidora@laagonia.com" class="txt-primary">distribuidora@laagonia.com</a>
                                 </span>
                             </div>
                         </div>
                     </div>
-                </section>
-                <section>
                     <div id="map-container-google-1" class="z-depth-1-half map-container container_map">
                         <iframe 
                             class=""
@@ -155,20 +210,26 @@
                                     <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"></path><path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"></path><path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"></path>
                                 </svg>
                             </a>
+                            <a class="d-flex anchor-footer" href="https://api.whatsapp.com/send?phone=%2B50683719640&data=AWB8VSb56BGYf5cLGCYsgcu4whtb-ABZzbjDD3zW2n7x_Xm1bY1Xq7y6-r2e100vIE-8FMrl_dK3dRkatXSPdXB2CQ1_oz6Um8579MJX6dFZ3bWzGE9IulZS4Xw4BOUKYXWJzcuqgyKTnG4OWkeSGKlCgYbPoRb7_99ATTtqbvi8kB0YjWmtAkOgrTxmdER_0i9eUcTlluahV9A7gWFzhVEVKshByNoxac7GVn8ONHmhwU2JUXoSBrKP-5OEv3I_E-067UtnZYY8xIPvWSusTfGZJ1jTsWwaIcAY-3Zu7iebsHLSdt47FPXfH4qAI_6kMT0&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwAR3REhRtTv0b4SJL7IaGhJZ_sTPdAH2yDC84pn76BXsp0H9nKzLWAkeMSxk" target="_blank" rel="noreferrer">
+                                <svg class="" height="19" width="19" viewBox="0 0 23 23">
+                                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z" />
+                                </svg>
+                            </a>
                             <a class="d-flex anchor-footer anchor-footer-contact" href="contact.html" rel="noreferrer">
                                 Contacto
                             </a>
                         </div>
                         <span class="text-white anchor-footer">
-                            © 2022 Distribuidora La Agonía from Felix Ojeda
+                            © 2022 Distribuidora La Agonía | Todos los derechos reservados
                         </span>
                     </div>
                 </div>
             </footer>
         </div>
     </div>
+    <!-- script -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
