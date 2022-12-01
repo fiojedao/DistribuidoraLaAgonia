@@ -46,11 +46,10 @@ async function initCatalog(){
 }
 
 async function getCatalog(){
-    var route = "../json/catalog.json";
+    var route = "./json/catalog.json";
 
     return await callJson(route);
 }
-
 async function callJson(route){
     if (route) {
         return await fetch(route)
