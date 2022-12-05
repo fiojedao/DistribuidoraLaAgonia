@@ -1,9 +1,28 @@
+var map, marker, watchID, geoLoc;
+let showMore = false;
+
+
 init();
 
 function init(){
+    showMore = false;
     initNav();
     initPromotions();
     initCatalog();
+    initBtns();
+}
+
+function showBTN(){
+    showMore = true;
+    initCatalog();
+}
+
+function initBtns(){
+    var buttons = document.querySelectorAll('.btn')
+    buttons.forEach(function (button) {
+        var button = new bootstrap.Button(button);
+        button.toggle();
+    })
 }
 
 function initNav(){
@@ -35,15 +54,35 @@ async function initCatalog(){
 
     var divCatalog = document.getElementById("list-catalog");
 
-    for (const iterator of obj.catalog) {
-            divCatalog.innerHTML = divCatalog.innerHTML +
-                "<div class='item-catalog'>" +
-                    "<div class='content-img-catalog'>" +
-                        "<img alt='" + iterator.name + "' class='img-catalog' src='"+ iterator.img +"'></img>" +
-                    "</div>" +
-                "</div>";
+    if(divCatalog) {
+        divCatalog.innerHTML = '';
+        if (!showMore) {
+            for (let index = 0; index < 10; index++) {
+                const iterator = obj.catalog[index];
+                divCatalog.innerHTML = divCatalog.innerHTML +
+                    "<div class='item-catalog'>" +
+                        "<div class='content-img-catalog'>" +
+                            "<img alt='" + iterator.name + "' class='img-catalog' src='"+ iterator.img +"'></img>" +
+                        "</div>" +
+                    "</div>";
+                
+            }
+            divCatalog.innerHTML = divCatalog.innerHTML + 
+            "<div class='container d-grid d-flex justify-content-center mt-3'>"+
+                "<button class='btn btn-primary-color' id='showmore' onclick='showBTN()'' type='button'>Mostrar mas</button>" +
+            "</div>"
+        } else {
+            for (let index = 0; index < obj.catalog.length; index++) {
+                const iterator = obj.catalog[index];
+                divCatalog.innerHTML = divCatalog.innerHTML +
+                    "<div class='item-catalog'>" +
+                        "<div class='content-img-catalog'>" +
+                            "<img alt='" + iterator.name + "' class='img-catalog' src='"+ iterator.img +"'></img>" +
+                        "</div>" +
+                    "</div>";
+            }
+        }
     }
-
 }
 
 async function initPromotions(){
@@ -51,13 +90,15 @@ async function initPromotions(){
 
     var divCatalog = document.getElementById("promotions");
 
-    for (const iterator of obj.promotions) {
+    if (divCatalog) {
+        for (const iterator of obj.promotions) {
             divCatalog.innerHTML = divCatalog.innerHTML +
                 "<div class='item-catalog'>" +
                     "<div class='content-img-catalog'>" +
                         "<img alt='" + iterator.name + "' class='img-catalog' src='"+ iterator.img +"'></img>" +
                     "</div>" +
                 "</div>";
+        }
     }
 
 }
@@ -80,3 +121,60 @@ async function callJson(route){
             .then((response) => {return response.json()});
     }
 };
+
+function initMap() {
+
+    const position = { lat: 10.016267543646446,  lng: -84.20682132588932  };
+    
+    map = new google.maps.Map(
+        document.getElementById("map"), {
+            zoom: 15,
+            center: position
+        }
+    );
+
+    marker = new google.maps.Marker(
+        {
+            position,
+            map,
+            title: "Crisbe Creative"
+        }
+    );
+
+    getPosition();
+}
+
+function getPosition() {
+    if (navigator.geolocation) {
+        geoLoc = navigator.geolocation;
+        watchID = geoLoc.watchPosition(showLocationOnMap, (err) => err.code == 1 ? alert("No Autorizado"): ((err.code == 2) ? alert("Posición inexistente"):false) );
+    } else {
+        alert("Geolocalización no soportada");
+    }
+}
+
+function showLocationOnMap(position) {
+    const directionsRenderer = new google.maps.DirectionsRenderer();
+    const directionsService = new google.maps.DirectionsService();
+
+    var latitud = position.coords.latitude;
+    var longitud = position.coords.longitude;
+    const myLatLng = { lat: latitud, lng: longitud };
+    directionsRenderer.setMap(map);
+    calculateAndDisplayRoute(directionsService, directionsRenderer, myLatLng);
+}
+
+function calculateAndDisplayRoute(directionsService, directionsRenderer, myLatLng) {
+    directionsService.route(
+        {
+            origin: { lat: myLatLng.lat, lng: myLatLng.lng },
+            destination: { lat: 10.016267543646446,  lng: -84.20682132588932 },
+            travelMode: google.maps.TravelMode["DRIVING"]
+        },
+        (response, status) => {
+            if (status == "OK") {
+                directionsRenderer.setDirections(response);
+            }
+        }
+    );
+}

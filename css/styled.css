@@ -1,5 +1,6 @@
 :root{
-	--color-primary: #242526
+	--color-primary: #242526;
+
 }
 
 body {
@@ -13,6 +14,11 @@ body {
 .txt-primary {
 	color: var(--color-primary);
 	text-decoration: none;
+}
+
+.btn-primary-color {
+	background-color: #F44236 !important;
+	color: ghostwhite !important;
 }
 
 .text-color-white {
@@ -196,7 +202,8 @@ svg {
 #lot,
 #recommendation,
 #moreid,
-#contcatme {
+#contcatme,
+#author {
 	border: 1px solid #313131;
 	margin-top: 10px;
 	border-radius: 10px;
@@ -497,6 +504,11 @@ svg {
 	background-color: #242526 !important;
 }
 
+.section-author {
+	background-color: #242526 !important;
+	border: 1px solid #313131;
+	color: whitesmoke;
+}
 .text-title-promo {
 	background-color: #242526;
 	color: white;
