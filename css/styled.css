@@ -41,6 +41,10 @@ svg {
 	fill: aliceblue;
 }
 
+.margin-top-100 {
+	margin-top: 100px;
+}
+
 /* Nav */
 .container-fluid > .navbar-brand {
 	color: aliceblue;
